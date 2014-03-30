@@ -1,4 +1,4 @@
-vertminer-scrypt.o: scrypt.c config.h miner.h \
+adnminer-scrypt.o: scrypt.c config.h miner.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/4.7.3/include/stdbool.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/4.7.3/include/stdint.h \
  /usr/include/stdint.h /usr/include/features.h /usr/include/stdc-predef.h \

@@ -62,10 +62,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/vertminer
-pkgincludedir = $(includedir)/vertminer
-pkglibdir = $(libdir)/vertminer
-pkglibexecdir = $(libexecdir)/vertminer
+pkgdatadir = $(datadir)/adnminer
+pkgincludedir = $(includedir)/adnminer
+pkglibdir = $(libdir)/adnminer
+pkglibexecdir = $(libexecdir)/adnminer
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -81,7 +81,7 @@ POST_UNINSTALL = :
 build_triplet = x86_64-unknown-linux-gnu
 host_triplet = x86_64-unknown-linux-gnu
 target_triplet = x86_64-unknown-linux-gnu
-bin_PROGRAMS = vertminer$(EXEEXT)
+bin_PROGRAMS = adnminer$(EXEEXT)
 am__append_1 = driver-opencl.h driver-opencl.c ocl.c \
 	ocl.h findnonce.c findnonce.h adl.c adl.h \
 	adl_functions.h *.cl
@@ -132,7 +132,7 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" \
 	"$(DESTDIR)$(bitstreamsdir)"
 PROGRAMS = $(bin_PROGRAMS)
-am__vertminer_SOURCES_DIST = vertminer.c elist.h miner.h compat.h \
+am__adnminer_SOURCES_DIST = adnminer.c elist.h miner.h compat.h \
 	bench_block.h util.c util.h uthash.h logging.h sha2.c sha2.h \
 	api.c logging.c driver-opencl.h driver-opencl.c ocl.c ocl.h \
 	findnonce.c findnonce.h adl.c adl.h adl_functions.h *.cl \
@@ -142,46 +142,46 @@ am__vertminer_SOURCES_DIST = vertminer.c elist.h miner.h compat.h \
 	driver-bitforce.c driver-hashfast.c driver-hashfast.h \
 	hf_protocol.h driver-bitfury.c driver-bitfury.h \
 	driver-icarus.c driver-klondike.c driver-modminer.c
-am__objects_1 = vertminer-driver-opencl.$(OBJEXT) \
-	vertminer-ocl.$(OBJEXT) \
-	vertminer-findnonce.$(OBJEXT) \
-	vertminer-adl.$(OBJEXT)
+am__objects_1 = adnminer-driver-opencl.$(OBJEXT) \
+	adnminer-ocl.$(OBJEXT) \
+	adnminer-findnonce.$(OBJEXT) \
+	adnminer-adl.$(OBJEXT)
 am__objects_2 =  \
-	vertminer-scrypt.$(OBJEXT)
-#am__objects_3 = vertminer-fpgautils.$(OBJEXT)
-#am__objects_4 = vertminer-usbutils.$(OBJEXT)
-#am__objects_5 = vertminer-driver-avalon.$(OBJEXT)
-#am__objects_6 = vertminer-driver-knc-spi-fpga.$(OBJEXT)
-#am__objects_7 = vertminer-driver-bflsc.$(OBJEXT)
+	adnminer-scrypt.$(OBJEXT)
+#am__objects_3 = adnminer-fpgautils.$(OBJEXT)
+#am__objects_4 = adnminer-usbutils.$(OBJEXT)
+#am__objects_5 = adnminer-driver-avalon.$(OBJEXT)
+#am__objects_6 = adnminer-driver-knc-spi-fpga.$(OBJEXT)
+#am__objects_7 = adnminer-driver-bflsc.$(OBJEXT)
 #am__objects_8 =  \
-#	vertminer-driver-bitforce.$(OBJEXT)
+#	adnminer-driver-bitforce.$(OBJEXT)
 #am__objects_9 =  \
-#	vertminer-driver-hashfast.$(OBJEXT)
-#am__objects_10 = vertminer-driver-bitfury.$(OBJEXT)
-#am__objects_11 = vertminer-driver-icarus.$(OBJEXT)
+#	adnminer-driver-hashfast.$(OBJEXT)
+#am__objects_10 = adnminer-driver-bitfury.$(OBJEXT)
+#am__objects_11 = adnminer-driver-icarus.$(OBJEXT)
 #am__objects_12 =  \
-#	vertminer-driver-klondike.$(OBJEXT)
+#	adnminer-driver-klondike.$(OBJEXT)
 #am__objects_13 =  \
-#	vertminer-driver-modminer.$(OBJEXT)
-am_vertminer_OBJECTS = vertminer-vertminer.$(OBJEXT) \
-	vertminer-util.$(OBJEXT) vertminer-sha2.$(OBJEXT) \
-	vertminer-api.$(OBJEXT) vertminer-logging.$(OBJEXT) \
+#	adnminer-driver-modminer.$(OBJEXT)
+am_adnminer_OBJECTS = adnminer-adnminer.$(OBJEXT) \
+	adnminer-util.$(OBJEXT) adnminer-sha2.$(OBJEXT) \
+	adnminer-api.$(OBJEXT) adnminer-logging.$(OBJEXT) \
 	$(am__objects_1) $(am__objects_2) $(am__objects_3) \
 	$(am__objects_4) $(am__objects_5) $(am__objects_6) \
 	$(am__objects_7) $(am__objects_8) $(am__objects_9) \
 	$(am__objects_10) $(am__objects_11) $(am__objects_12) \
 	$(am__objects_13)
-vertminer_OBJECTS = $(am_vertminer_OBJECTS)
+adnminer_OBJECTS = $(am_adnminer_OBJECTS)
 am__DEPENDENCIES_1 =
-vertminer_DEPENDENCIES = $(am__DEPENDENCIES_1) lib/libgnu.a \
+adnminer_DEPENDENCIES = $(am__DEPENDENCIES_1) lib/libgnu.a \
 	ccan/libccan.a
 AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-vertminer_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+adnminer_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-	$(vertminer_LDFLAGS) $(LDFLAGS) -o $@
+	$(adnminer_LDFLAGS) $(LDFLAGS) -o $@
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
     $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
@@ -244,8 +244,8 @@ AM_V_CCLD = $(am__v_CCLD_$(V))
 am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(vertminer_SOURCES)
-DIST_SOURCES = $(am__vertminer_SOURCES_DIST)
+SOURCES = $(adnminer_SOURCES)
+DIST_SOURCES = $(am__adnminer_SOURCES_DIST)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -489,11 +489,11 @@ OPENCL_FLAGS =
 OPENCL_LIBS = -lOpenCL
 OTOOL = 
 OTOOL64 = 
-PACKAGE = vertminer
+PACKAGE = adnminer
 PACKAGE_BUGREPORT = 
-PACKAGE_NAME = vertminer
-PACKAGE_STRING = vertminer 3.7.2
-PACKAGE_TARNAME = vertminer
+PACKAGE_NAME = adnminer
+PACKAGE_STRING = adnminer 3.7.2
+PACKAGE_TARNAME = adnminer
 PACKAGE_URL = 
 PACKAGE_VERSION = 3.7.2
 PATH_SEPARATOR = :
@@ -614,21 +614,21 @@ EXTRA_DIST = example.conf m4/gnulib-cache.m4 linux-usb-cgminer \
 
 SUBDIRS = lib compat ccan
 AM_CPPFLAGS = $(PTHREAD_FLAGS) -fno-strict-aliasing $(JANSSON_INCLUDES) $(USBUTILS_INCLUDES)
-vertminer_LDFLAGS = $(PTHREAD_FLAGS)
-vertminer_LDADD = $(DLOPEN_FLAGS) -lcurl  compat/jansson-2.5/src/.libs/libjansson.a -lpthread \
+adnminer_LDFLAGS = $(PTHREAD_FLAGS)
+adnminer_LDADD = $(DLOPEN_FLAGS) -lcurl  compat/jansson-2.5/src/.libs/libjansson.a -lpthread \
 		  -lOpenCL    \
 		    -lrt \
 		  -lm lib/libgnu.a ccan/libccan.a
 
-vertminer_CPPFLAGS = -I$(top_builddir)/lib \
+adnminer_CPPFLAGS = -I$(top_builddir)/lib \
 	-I$(top_srcdir)/lib  \
 	 $(ADL_CPPFLAGS)
-#vertminer_CPPFLAGS = -I$(top_builddir)/lib \
+#adnminer_CPPFLAGS = -I$(top_builddir)/lib \
 #	-I$(top_srcdir)/lib  \
 #	$(ADL_CPPFLAGS)
 
 # common sources
-vertminer_SOURCES := vertminer.c elist.h miner.h compat.h \
+adnminer_SOURCES := adnminer.c elist.h miner.h compat.h \
 	bench_block.h util.c util.h uthash.h logging.h sha2.c sha2.h \
 	api.c logging.c $(am__append_1) $(am__append_2) \
 	$(am__append_3) $(am__append_4) $(am__append_5) \
@@ -742,9 +742,9 @@ clean-binPROGRAMS:
 	echo " rm -f" $$list; \
 	rm -f $$list
 
-vertminer$(EXEEXT): $(vertminer_OBJECTS) $(vertminer_DEPENDENCIES) $(EXTRA_vertminer_DEPENDENCIES) 
-	@rm -f vertminer$(EXEEXT)
-	$(AM_V_CCLD)$(vertminer_LINK) $(vertminer_OBJECTS) $(vertminer_LDADD) $(LIBS)
+adnminer$(EXEEXT): $(adnminer_OBJECTS) $(adnminer_DEPENDENCIES) $(EXTRA_adnminer_DEPENDENCIES) 
+	@rm -f adnminer$(EXEEXT)
+	$(AM_V_CCLD)$(adnminer_LINK) $(adnminer_OBJECTS) $(adnminer_LDADD) $(LIBS)
 install-binSCRIPTS: $(bin_SCRIPTS)
 	@$(NORMAL_INSTALL)
 	@list='$(bin_SCRIPTS)'; test -n "$(bindir)" || list=; \
@@ -787,27 +787,27 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/vertminer-adl.Po
-include ./$(DEPDIR)/vertminer-api.Po
-include ./$(DEPDIR)/vertminer-driver-avalon.Po
-include ./$(DEPDIR)/vertminer-driver-bflsc.Po
-include ./$(DEPDIR)/vertminer-driver-bitforce.Po
-include ./$(DEPDIR)/vertminer-driver-bitfury.Po
-include ./$(DEPDIR)/vertminer-driver-hashfast.Po
-include ./$(DEPDIR)/vertminer-driver-icarus.Po
-include ./$(DEPDIR)/vertminer-driver-klondike.Po
-include ./$(DEPDIR)/vertminer-driver-knc-spi-fpga.Po
-include ./$(DEPDIR)/vertminer-driver-modminer.Po
-include ./$(DEPDIR)/vertminer-driver-opencl.Po
-include ./$(DEPDIR)/vertminer-findnonce.Po
-include ./$(DEPDIR)/vertminer-fpgautils.Po
-include ./$(DEPDIR)/vertminer-logging.Po
-include ./$(DEPDIR)/vertminer-ocl.Po
-include ./$(DEPDIR)/vertminer-scrypt.Po
-include ./$(DEPDIR)/vertminer-sha2.Po
-include ./$(DEPDIR)/vertminer-usbutils.Po
-include ./$(DEPDIR)/vertminer-util.Po
-include ./$(DEPDIR)/vertminer-vertminer.Po
+include ./$(DEPDIR)/adnminer-adl.Po
+include ./$(DEPDIR)/adnminer-api.Po
+include ./$(DEPDIR)/adnminer-driver-avalon.Po
+include ./$(DEPDIR)/adnminer-driver-bflsc.Po
+include ./$(DEPDIR)/adnminer-driver-bitforce.Po
+include ./$(DEPDIR)/adnminer-driver-bitfury.Po
+include ./$(DEPDIR)/adnminer-driver-hashfast.Po
+include ./$(DEPDIR)/adnminer-driver-icarus.Po
+include ./$(DEPDIR)/adnminer-driver-klondike.Po
+include ./$(DEPDIR)/adnminer-driver-knc-spi-fpga.Po
+include ./$(DEPDIR)/adnminer-driver-modminer.Po
+include ./$(DEPDIR)/adnminer-driver-opencl.Po
+include ./$(DEPDIR)/adnminer-findnonce.Po
+include ./$(DEPDIR)/adnminer-fpgautils.Po
+include ./$(DEPDIR)/adnminer-logging.Po
+include ./$(DEPDIR)/adnminer-ocl.Po
+include ./$(DEPDIR)/adnminer-scrypt.Po
+include ./$(DEPDIR)/adnminer-sha2.Po
+include ./$(DEPDIR)/adnminer-usbutils.Po
+include ./$(DEPDIR)/adnminer-util.Po
+include ./$(DEPDIR)/adnminer-adnminer.Po
 
 .c.o:
 	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -833,299 +833,299 @@ include ./$(DEPDIR)/vertminer-vertminer.Po
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
-vertminer-vertminer.o: vertminer.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-vertminer.o -MD -MP -MF $(DEPDIR)/vertminer-vertminer.Tpo -c -o vertminer-vertminer.o `test -f 'vertminer.c' || echo '$(srcdir)/'`vertminer.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-vertminer.Tpo $(DEPDIR)/vertminer-vertminer.Po
-#	$(AM_V_CC)source='vertminer.c' object='vertminer-vertminer.o' libtool=no \
+adnminer-adnminer.o: adnminer.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-adnminer.o -MD -MP -MF $(DEPDIR)/adnminer-adnminer.Tpo -c -o adnminer-adnminer.o `test -f 'adnminer.c' || echo '$(srcdir)/'`adnminer.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-adnminer.Tpo $(DEPDIR)/adnminer-adnminer.Po
+#	$(AM_V_CC)source='adnminer.c' object='adnminer-adnminer.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-vertminer.o `test -f 'vertminer.c' || echo '$(srcdir)/'`vertminer.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-adnminer.o `test -f 'adnminer.c' || echo '$(srcdir)/'`adnminer.c
 
-vertminer-vertminer.obj: vertminer.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-vertminer.obj -MD -MP -MF $(DEPDIR)/vertminer-vertminer.Tpo -c -o vertminer-vertminer.obj `if test -f 'vertminer.c'; then $(CYGPATH_W) 'vertminer.c'; else $(CYGPATH_W) '$(srcdir)/vertminer.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-vertminer.Tpo $(DEPDIR)/vertminer-vertminer.Po
-#	$(AM_V_CC)source='vertminer.c' object='vertminer-vertminer.obj' libtool=no \
+adnminer-adnminer.obj: adnminer.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-adnminer.obj -MD -MP -MF $(DEPDIR)/adnminer-adnminer.Tpo -c -o adnminer-adnminer.obj `if test -f 'adnminer.c'; then $(CYGPATH_W) 'adnminer.c'; else $(CYGPATH_W) '$(srcdir)/adnminer.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-adnminer.Tpo $(DEPDIR)/adnminer-adnminer.Po
+#	$(AM_V_CC)source='adnminer.c' object='adnminer-adnminer.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-vertminer.obj `if test -f 'vertminer.c'; then $(CYGPATH_W) 'vertminer.c'; else $(CYGPATH_W) '$(srcdir)/vertminer.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-adnminer.obj `if test -f 'adnminer.c'; then $(CYGPATH_W) 'adnminer.c'; else $(CYGPATH_W) '$(srcdir)/adnminer.c'; fi`
 
-vertminer-util.o: util.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-util.o -MD -MP -MF $(DEPDIR)/vertminer-util.Tpo -c -o vertminer-util.o `test -f 'util.c' || echo '$(srcdir)/'`util.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-util.Tpo $(DEPDIR)/vertminer-util.Po
-#	$(AM_V_CC)source='util.c' object='vertminer-util.o' libtool=no \
+adnminer-util.o: util.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-util.o -MD -MP -MF $(DEPDIR)/adnminer-util.Tpo -c -o adnminer-util.o `test -f 'util.c' || echo '$(srcdir)/'`util.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-util.Tpo $(DEPDIR)/adnminer-util.Po
+#	$(AM_V_CC)source='util.c' object='adnminer-util.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-util.o `test -f 'util.c' || echo '$(srcdir)/'`util.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-util.o `test -f 'util.c' || echo '$(srcdir)/'`util.c
 
-vertminer-util.obj: util.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-util.obj -MD -MP -MF $(DEPDIR)/vertminer-util.Tpo -c -o vertminer-util.obj `if test -f 'util.c'; then $(CYGPATH_W) 'util.c'; else $(CYGPATH_W) '$(srcdir)/util.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-util.Tpo $(DEPDIR)/vertminer-util.Po
-#	$(AM_V_CC)source='util.c' object='vertminer-util.obj' libtool=no \
+adnminer-util.obj: util.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-util.obj -MD -MP -MF $(DEPDIR)/adnminer-util.Tpo -c -o adnminer-util.obj `if test -f 'util.c'; then $(CYGPATH_W) 'util.c'; else $(CYGPATH_W) '$(srcdir)/util.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-util.Tpo $(DEPDIR)/adnminer-util.Po
+#	$(AM_V_CC)source='util.c' object='adnminer-util.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-util.obj `if test -f 'util.c'; then $(CYGPATH_W) 'util.c'; else $(CYGPATH_W) '$(srcdir)/util.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-util.obj `if test -f 'util.c'; then $(CYGPATH_W) 'util.c'; else $(CYGPATH_W) '$(srcdir)/util.c'; fi`
 
-vertminer-sha2.o: sha2.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-sha2.o -MD -MP -MF $(DEPDIR)/vertminer-sha2.Tpo -c -o vertminer-sha2.o `test -f 'sha2.c' || echo '$(srcdir)/'`sha2.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-sha2.Tpo $(DEPDIR)/vertminer-sha2.Po
-#	$(AM_V_CC)source='sha2.c' object='vertminer-sha2.o' libtool=no \
+adnminer-sha2.o: sha2.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-sha2.o -MD -MP -MF $(DEPDIR)/adnminer-sha2.Tpo -c -o adnminer-sha2.o `test -f 'sha2.c' || echo '$(srcdir)/'`sha2.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-sha2.Tpo $(DEPDIR)/adnminer-sha2.Po
+#	$(AM_V_CC)source='sha2.c' object='adnminer-sha2.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-sha2.o `test -f 'sha2.c' || echo '$(srcdir)/'`sha2.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-sha2.o `test -f 'sha2.c' || echo '$(srcdir)/'`sha2.c
 
-vertminer-sha2.obj: sha2.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-sha2.obj -MD -MP -MF $(DEPDIR)/vertminer-sha2.Tpo -c -o vertminer-sha2.obj `if test -f 'sha2.c'; then $(CYGPATH_W) 'sha2.c'; else $(CYGPATH_W) '$(srcdir)/sha2.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-sha2.Tpo $(DEPDIR)/vertminer-sha2.Po
-#	$(AM_V_CC)source='sha2.c' object='vertminer-sha2.obj' libtool=no \
+adnminer-sha2.obj: sha2.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-sha2.obj -MD -MP -MF $(DEPDIR)/adnminer-sha2.Tpo -c -o adnminer-sha2.obj `if test -f 'sha2.c'; then $(CYGPATH_W) 'sha2.c'; else $(CYGPATH_W) '$(srcdir)/sha2.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-sha2.Tpo $(DEPDIR)/adnminer-sha2.Po
+#	$(AM_V_CC)source='sha2.c' object='adnminer-sha2.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-sha2.obj `if test -f 'sha2.c'; then $(CYGPATH_W) 'sha2.c'; else $(CYGPATH_W) '$(srcdir)/sha2.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-sha2.obj `if test -f 'sha2.c'; then $(CYGPATH_W) 'sha2.c'; else $(CYGPATH_W) '$(srcdir)/sha2.c'; fi`
 
-vertminer-api.o: api.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-api.o -MD -MP -MF $(DEPDIR)/vertminer-api.Tpo -c -o vertminer-api.o `test -f 'api.c' || echo '$(srcdir)/'`api.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-api.Tpo $(DEPDIR)/vertminer-api.Po
-#	$(AM_V_CC)source='api.c' object='vertminer-api.o' libtool=no \
+adnminer-api.o: api.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-api.o -MD -MP -MF $(DEPDIR)/adnminer-api.Tpo -c -o adnminer-api.o `test -f 'api.c' || echo '$(srcdir)/'`api.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-api.Tpo $(DEPDIR)/adnminer-api.Po
+#	$(AM_V_CC)source='api.c' object='adnminer-api.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-api.o `test -f 'api.c' || echo '$(srcdir)/'`api.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-api.o `test -f 'api.c' || echo '$(srcdir)/'`api.c
 
-vertminer-api.obj: api.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-api.obj -MD -MP -MF $(DEPDIR)/vertminer-api.Tpo -c -o vertminer-api.obj `if test -f 'api.c'; then $(CYGPATH_W) 'api.c'; else $(CYGPATH_W) '$(srcdir)/api.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-api.Tpo $(DEPDIR)/vertminer-api.Po
-#	$(AM_V_CC)source='api.c' object='vertminer-api.obj' libtool=no \
+adnminer-api.obj: api.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-api.obj -MD -MP -MF $(DEPDIR)/adnminer-api.Tpo -c -o adnminer-api.obj `if test -f 'api.c'; then $(CYGPATH_W) 'api.c'; else $(CYGPATH_W) '$(srcdir)/api.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-api.Tpo $(DEPDIR)/adnminer-api.Po
+#	$(AM_V_CC)source='api.c' object='adnminer-api.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-api.obj `if test -f 'api.c'; then $(CYGPATH_W) 'api.c'; else $(CYGPATH_W) '$(srcdir)/api.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-api.obj `if test -f 'api.c'; then $(CYGPATH_W) 'api.c'; else $(CYGPATH_W) '$(srcdir)/api.c'; fi`
 
-vertminer-logging.o: logging.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-logging.o -MD -MP -MF $(DEPDIR)/vertminer-logging.Tpo -c -o vertminer-logging.o `test -f 'logging.c' || echo '$(srcdir)/'`logging.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-logging.Tpo $(DEPDIR)/vertminer-logging.Po
-#	$(AM_V_CC)source='logging.c' object='vertminer-logging.o' libtool=no \
+adnminer-logging.o: logging.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-logging.o -MD -MP -MF $(DEPDIR)/adnminer-logging.Tpo -c -o adnminer-logging.o `test -f 'logging.c' || echo '$(srcdir)/'`logging.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-logging.Tpo $(DEPDIR)/adnminer-logging.Po
+#	$(AM_V_CC)source='logging.c' object='adnminer-logging.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-logging.o `test -f 'logging.c' || echo '$(srcdir)/'`logging.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-logging.o `test -f 'logging.c' || echo '$(srcdir)/'`logging.c
 
-vertminer-logging.obj: logging.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-logging.obj -MD -MP -MF $(DEPDIR)/vertminer-logging.Tpo -c -o vertminer-logging.obj `if test -f 'logging.c'; then $(CYGPATH_W) 'logging.c'; else $(CYGPATH_W) '$(srcdir)/logging.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-logging.Tpo $(DEPDIR)/vertminer-logging.Po
-#	$(AM_V_CC)source='logging.c' object='vertminer-logging.obj' libtool=no \
+adnminer-logging.obj: logging.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-logging.obj -MD -MP -MF $(DEPDIR)/adnminer-logging.Tpo -c -o adnminer-logging.obj `if test -f 'logging.c'; then $(CYGPATH_W) 'logging.c'; else $(CYGPATH_W) '$(srcdir)/logging.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-logging.Tpo $(DEPDIR)/adnminer-logging.Po
+#	$(AM_V_CC)source='logging.c' object='adnminer-logging.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-logging.obj `if test -f 'logging.c'; then $(CYGPATH_W) 'logging.c'; else $(CYGPATH_W) '$(srcdir)/logging.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-logging.obj `if test -f 'logging.c'; then $(CYGPATH_W) 'logging.c'; else $(CYGPATH_W) '$(srcdir)/logging.c'; fi`
 
-vertminer-driver-opencl.o: driver-opencl.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-opencl.o -MD -MP -MF $(DEPDIR)/vertminer-driver-opencl.Tpo -c -o vertminer-driver-opencl.o `test -f 'driver-opencl.c' || echo '$(srcdir)/'`driver-opencl.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-opencl.Tpo $(DEPDIR)/vertminer-driver-opencl.Po
-#	$(AM_V_CC)source='driver-opencl.c' object='vertminer-driver-opencl.o' libtool=no \
+adnminer-driver-opencl.o: driver-opencl.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-opencl.o -MD -MP -MF $(DEPDIR)/adnminer-driver-opencl.Tpo -c -o adnminer-driver-opencl.o `test -f 'driver-opencl.c' || echo '$(srcdir)/'`driver-opencl.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-opencl.Tpo $(DEPDIR)/adnminer-driver-opencl.Po
+#	$(AM_V_CC)source='driver-opencl.c' object='adnminer-driver-opencl.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-opencl.o `test -f 'driver-opencl.c' || echo '$(srcdir)/'`driver-opencl.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-opencl.o `test -f 'driver-opencl.c' || echo '$(srcdir)/'`driver-opencl.c
 
-vertminer-driver-opencl.obj: driver-opencl.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-opencl.obj -MD -MP -MF $(DEPDIR)/vertminer-driver-opencl.Tpo -c -o vertminer-driver-opencl.obj `if test -f 'driver-opencl.c'; then $(CYGPATH_W) 'driver-opencl.c'; else $(CYGPATH_W) '$(srcdir)/driver-opencl.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-opencl.Tpo $(DEPDIR)/vertminer-driver-opencl.Po
-#	$(AM_V_CC)source='driver-opencl.c' object='vertminer-driver-opencl.obj' libtool=no \
+adnminer-driver-opencl.obj: driver-opencl.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-opencl.obj -MD -MP -MF $(DEPDIR)/adnminer-driver-opencl.Tpo -c -o adnminer-driver-opencl.obj `if test -f 'driver-opencl.c'; then $(CYGPATH_W) 'driver-opencl.c'; else $(CYGPATH_W) '$(srcdir)/driver-opencl.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-opencl.Tpo $(DEPDIR)/adnminer-driver-opencl.Po
+#	$(AM_V_CC)source='driver-opencl.c' object='adnminer-driver-opencl.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-opencl.obj `if test -f 'driver-opencl.c'; then $(CYGPATH_W) 'driver-opencl.c'; else $(CYGPATH_W) '$(srcdir)/driver-opencl.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-opencl.obj `if test -f 'driver-opencl.c'; then $(CYGPATH_W) 'driver-opencl.c'; else $(CYGPATH_W) '$(srcdir)/driver-opencl.c'; fi`
 
-vertminer-ocl.o: ocl.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-ocl.o -MD -MP -MF $(DEPDIR)/vertminer-ocl.Tpo -c -o vertminer-ocl.o `test -f 'ocl.c' || echo '$(srcdir)/'`ocl.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-ocl.Tpo $(DEPDIR)/vertminer-ocl.Po
-#	$(AM_V_CC)source='ocl.c' object='vertminer-ocl.o' libtool=no \
+adnminer-ocl.o: ocl.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-ocl.o -MD -MP -MF $(DEPDIR)/adnminer-ocl.Tpo -c -o adnminer-ocl.o `test -f 'ocl.c' || echo '$(srcdir)/'`ocl.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-ocl.Tpo $(DEPDIR)/adnminer-ocl.Po
+#	$(AM_V_CC)source='ocl.c' object='adnminer-ocl.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-ocl.o `test -f 'ocl.c' || echo '$(srcdir)/'`ocl.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-ocl.o `test -f 'ocl.c' || echo '$(srcdir)/'`ocl.c
 
-vertminer-ocl.obj: ocl.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-ocl.obj -MD -MP -MF $(DEPDIR)/vertminer-ocl.Tpo -c -o vertminer-ocl.obj `if test -f 'ocl.c'; then $(CYGPATH_W) 'ocl.c'; else $(CYGPATH_W) '$(srcdir)/ocl.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-ocl.Tpo $(DEPDIR)/vertminer-ocl.Po
-#	$(AM_V_CC)source='ocl.c' object='vertminer-ocl.obj' libtool=no \
+adnminer-ocl.obj: ocl.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-ocl.obj -MD -MP -MF $(DEPDIR)/adnminer-ocl.Tpo -c -o adnminer-ocl.obj `if test -f 'ocl.c'; then $(CYGPATH_W) 'ocl.c'; else $(CYGPATH_W) '$(srcdir)/ocl.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-ocl.Tpo $(DEPDIR)/adnminer-ocl.Po
+#	$(AM_V_CC)source='ocl.c' object='adnminer-ocl.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-ocl.obj `if test -f 'ocl.c'; then $(CYGPATH_W) 'ocl.c'; else $(CYGPATH_W) '$(srcdir)/ocl.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-ocl.obj `if test -f 'ocl.c'; then $(CYGPATH_W) 'ocl.c'; else $(CYGPATH_W) '$(srcdir)/ocl.c'; fi`
 
-vertminer-findnonce.o: findnonce.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-findnonce.o -MD -MP -MF $(DEPDIR)/vertminer-findnonce.Tpo -c -o vertminer-findnonce.o `test -f 'findnonce.c' || echo '$(srcdir)/'`findnonce.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-findnonce.Tpo $(DEPDIR)/vertminer-findnonce.Po
-#	$(AM_V_CC)source='findnonce.c' object='vertminer-findnonce.o' libtool=no \
+adnminer-findnonce.o: findnonce.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-findnonce.o -MD -MP -MF $(DEPDIR)/adnminer-findnonce.Tpo -c -o adnminer-findnonce.o `test -f 'findnonce.c' || echo '$(srcdir)/'`findnonce.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-findnonce.Tpo $(DEPDIR)/adnminer-findnonce.Po
+#	$(AM_V_CC)source='findnonce.c' object='adnminer-findnonce.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-findnonce.o `test -f 'findnonce.c' || echo '$(srcdir)/'`findnonce.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-findnonce.o `test -f 'findnonce.c' || echo '$(srcdir)/'`findnonce.c
 
-vertminer-findnonce.obj: findnonce.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-findnonce.obj -MD -MP -MF $(DEPDIR)/vertminer-findnonce.Tpo -c -o vertminer-findnonce.obj `if test -f 'findnonce.c'; then $(CYGPATH_W) 'findnonce.c'; else $(CYGPATH_W) '$(srcdir)/findnonce.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-findnonce.Tpo $(DEPDIR)/vertminer-findnonce.Po
-#	$(AM_V_CC)source='findnonce.c' object='vertminer-findnonce.obj' libtool=no \
+adnminer-findnonce.obj: findnonce.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-findnonce.obj -MD -MP -MF $(DEPDIR)/adnminer-findnonce.Tpo -c -o adnminer-findnonce.obj `if test -f 'findnonce.c'; then $(CYGPATH_W) 'findnonce.c'; else $(CYGPATH_W) '$(srcdir)/findnonce.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-findnonce.Tpo $(DEPDIR)/adnminer-findnonce.Po
+#	$(AM_V_CC)source='findnonce.c' object='adnminer-findnonce.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-findnonce.obj `if test -f 'findnonce.c'; then $(CYGPATH_W) 'findnonce.c'; else $(CYGPATH_W) '$(srcdir)/findnonce.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-findnonce.obj `if test -f 'findnonce.c'; then $(CYGPATH_W) 'findnonce.c'; else $(CYGPATH_W) '$(srcdir)/findnonce.c'; fi`
 
-vertminer-adl.o: adl.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-adl.o -MD -MP -MF $(DEPDIR)/vertminer-adl.Tpo -c -o vertminer-adl.o `test -f 'adl.c' || echo '$(srcdir)/'`adl.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-adl.Tpo $(DEPDIR)/vertminer-adl.Po
-#	$(AM_V_CC)source='adl.c' object='vertminer-adl.o' libtool=no \
+adnminer-adl.o: adl.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-adl.o -MD -MP -MF $(DEPDIR)/adnminer-adl.Tpo -c -o adnminer-adl.o `test -f 'adl.c' || echo '$(srcdir)/'`adl.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-adl.Tpo $(DEPDIR)/adnminer-adl.Po
+#	$(AM_V_CC)source='adl.c' object='adnminer-adl.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-adl.o `test -f 'adl.c' || echo '$(srcdir)/'`adl.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-adl.o `test -f 'adl.c' || echo '$(srcdir)/'`adl.c
 
-vertminer-adl.obj: adl.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-adl.obj -MD -MP -MF $(DEPDIR)/vertminer-adl.Tpo -c -o vertminer-adl.obj `if test -f 'adl.c'; then $(CYGPATH_W) 'adl.c'; else $(CYGPATH_W) '$(srcdir)/adl.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-adl.Tpo $(DEPDIR)/vertminer-adl.Po
-#	$(AM_V_CC)source='adl.c' object='vertminer-adl.obj' libtool=no \
+adnminer-adl.obj: adl.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-adl.obj -MD -MP -MF $(DEPDIR)/adnminer-adl.Tpo -c -o adnminer-adl.obj `if test -f 'adl.c'; then $(CYGPATH_W) 'adl.c'; else $(CYGPATH_W) '$(srcdir)/adl.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-adl.Tpo $(DEPDIR)/adnminer-adl.Po
+#	$(AM_V_CC)source='adl.c' object='adnminer-adl.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-adl.obj `if test -f 'adl.c'; then $(CYGPATH_W) 'adl.c'; else $(CYGPATH_W) '$(srcdir)/adl.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-adl.obj `if test -f 'adl.c'; then $(CYGPATH_W) 'adl.c'; else $(CYGPATH_W) '$(srcdir)/adl.c'; fi`
 
-vertminer-scrypt.o: scrypt.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-scrypt.o -MD -MP -MF $(DEPDIR)/vertminer-scrypt.Tpo -c -o vertminer-scrypt.o `test -f 'scrypt.c' || echo '$(srcdir)/'`scrypt.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-scrypt.Tpo $(DEPDIR)/vertminer-scrypt.Po
-#	$(AM_V_CC)source='scrypt.c' object='vertminer-scrypt.o' libtool=no \
+adnminer-scrypt.o: scrypt.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-scrypt.o -MD -MP -MF $(DEPDIR)/adnminer-scrypt.Tpo -c -o adnminer-scrypt.o `test -f 'scrypt.c' || echo '$(srcdir)/'`scrypt.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-scrypt.Tpo $(DEPDIR)/adnminer-scrypt.Po
+#	$(AM_V_CC)source='scrypt.c' object='adnminer-scrypt.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-scrypt.o `test -f 'scrypt.c' || echo '$(srcdir)/'`scrypt.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-scrypt.o `test -f 'scrypt.c' || echo '$(srcdir)/'`scrypt.c
 
-vertminer-scrypt.obj: scrypt.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-scrypt.obj -MD -MP -MF $(DEPDIR)/vertminer-scrypt.Tpo -c -o vertminer-scrypt.obj `if test -f 'scrypt.c'; then $(CYGPATH_W) 'scrypt.c'; else $(CYGPATH_W) '$(srcdir)/scrypt.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-scrypt.Tpo $(DEPDIR)/vertminer-scrypt.Po
-#	$(AM_V_CC)source='scrypt.c' object='vertminer-scrypt.obj' libtool=no \
+adnminer-scrypt.obj: scrypt.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-scrypt.obj -MD -MP -MF $(DEPDIR)/adnminer-scrypt.Tpo -c -o adnminer-scrypt.obj `if test -f 'scrypt.c'; then $(CYGPATH_W) 'scrypt.c'; else $(CYGPATH_W) '$(srcdir)/scrypt.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-scrypt.Tpo $(DEPDIR)/adnminer-scrypt.Po
+#	$(AM_V_CC)source='scrypt.c' object='adnminer-scrypt.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-scrypt.obj `if test -f 'scrypt.c'; then $(CYGPATH_W) 'scrypt.c'; else $(CYGPATH_W) '$(srcdir)/scrypt.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-scrypt.obj `if test -f 'scrypt.c'; then $(CYGPATH_W) 'scrypt.c'; else $(CYGPATH_W) '$(srcdir)/scrypt.c'; fi`
 
-vertminer-fpgautils.o: fpgautils.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-fpgautils.o -MD -MP -MF $(DEPDIR)/vertminer-fpgautils.Tpo -c -o vertminer-fpgautils.o `test -f 'fpgautils.c' || echo '$(srcdir)/'`fpgautils.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-fpgautils.Tpo $(DEPDIR)/vertminer-fpgautils.Po
-#	$(AM_V_CC)source='fpgautils.c' object='vertminer-fpgautils.o' libtool=no \
+adnminer-fpgautils.o: fpgautils.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-fpgautils.o -MD -MP -MF $(DEPDIR)/adnminer-fpgautils.Tpo -c -o adnminer-fpgautils.o `test -f 'fpgautils.c' || echo '$(srcdir)/'`fpgautils.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-fpgautils.Tpo $(DEPDIR)/adnminer-fpgautils.Po
+#	$(AM_V_CC)source='fpgautils.c' object='adnminer-fpgautils.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-fpgautils.o `test -f 'fpgautils.c' || echo '$(srcdir)/'`fpgautils.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-fpgautils.o `test -f 'fpgautils.c' || echo '$(srcdir)/'`fpgautils.c
 
-vertminer-fpgautils.obj: fpgautils.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-fpgautils.obj -MD -MP -MF $(DEPDIR)/vertminer-fpgautils.Tpo -c -o vertminer-fpgautils.obj `if test -f 'fpgautils.c'; then $(CYGPATH_W) 'fpgautils.c'; else $(CYGPATH_W) '$(srcdir)/fpgautils.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-fpgautils.Tpo $(DEPDIR)/vertminer-fpgautils.Po
-#	$(AM_V_CC)source='fpgautils.c' object='vertminer-fpgautils.obj' libtool=no \
+adnminer-fpgautils.obj: fpgautils.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-fpgautils.obj -MD -MP -MF $(DEPDIR)/adnminer-fpgautils.Tpo -c -o adnminer-fpgautils.obj `if test -f 'fpgautils.c'; then $(CYGPATH_W) 'fpgautils.c'; else $(CYGPATH_W) '$(srcdir)/fpgautils.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-fpgautils.Tpo $(DEPDIR)/adnminer-fpgautils.Po
+#	$(AM_V_CC)source='fpgautils.c' object='adnminer-fpgautils.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-fpgautils.obj `if test -f 'fpgautils.c'; then $(CYGPATH_W) 'fpgautils.c'; else $(CYGPATH_W) '$(srcdir)/fpgautils.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-fpgautils.obj `if test -f 'fpgautils.c'; then $(CYGPATH_W) 'fpgautils.c'; else $(CYGPATH_W) '$(srcdir)/fpgautils.c'; fi`
 
-vertminer-usbutils.o: usbutils.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-usbutils.o -MD -MP -MF $(DEPDIR)/vertminer-usbutils.Tpo -c -o vertminer-usbutils.o `test -f 'usbutils.c' || echo '$(srcdir)/'`usbutils.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-usbutils.Tpo $(DEPDIR)/vertminer-usbutils.Po
-#	$(AM_V_CC)source='usbutils.c' object='vertminer-usbutils.o' libtool=no \
+adnminer-usbutils.o: usbutils.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-usbutils.o -MD -MP -MF $(DEPDIR)/adnminer-usbutils.Tpo -c -o adnminer-usbutils.o `test -f 'usbutils.c' || echo '$(srcdir)/'`usbutils.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-usbutils.Tpo $(DEPDIR)/adnminer-usbutils.Po
+#	$(AM_V_CC)source='usbutils.c' object='adnminer-usbutils.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-usbutils.o `test -f 'usbutils.c' || echo '$(srcdir)/'`usbutils.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-usbutils.o `test -f 'usbutils.c' || echo '$(srcdir)/'`usbutils.c
 
-vertminer-usbutils.obj: usbutils.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-usbutils.obj -MD -MP -MF $(DEPDIR)/vertminer-usbutils.Tpo -c -o vertminer-usbutils.obj `if test -f 'usbutils.c'; then $(CYGPATH_W) 'usbutils.c'; else $(CYGPATH_W) '$(srcdir)/usbutils.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-usbutils.Tpo $(DEPDIR)/vertminer-usbutils.Po
-#	$(AM_V_CC)source='usbutils.c' object='vertminer-usbutils.obj' libtool=no \
+adnminer-usbutils.obj: usbutils.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-usbutils.obj -MD -MP -MF $(DEPDIR)/adnminer-usbutils.Tpo -c -o adnminer-usbutils.obj `if test -f 'usbutils.c'; then $(CYGPATH_W) 'usbutils.c'; else $(CYGPATH_W) '$(srcdir)/usbutils.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-usbutils.Tpo $(DEPDIR)/adnminer-usbutils.Po
+#	$(AM_V_CC)source='usbutils.c' object='adnminer-usbutils.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-usbutils.obj `if test -f 'usbutils.c'; then $(CYGPATH_W) 'usbutils.c'; else $(CYGPATH_W) '$(srcdir)/usbutils.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-usbutils.obj `if test -f 'usbutils.c'; then $(CYGPATH_W) 'usbutils.c'; else $(CYGPATH_W) '$(srcdir)/usbutils.c'; fi`
 
-vertminer-driver-avalon.o: driver-avalon.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-avalon.o -MD -MP -MF $(DEPDIR)/vertminer-driver-avalon.Tpo -c -o vertminer-driver-avalon.o `test -f 'driver-avalon.c' || echo '$(srcdir)/'`driver-avalon.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-avalon.Tpo $(DEPDIR)/vertminer-driver-avalon.Po
-#	$(AM_V_CC)source='driver-avalon.c' object='vertminer-driver-avalon.o' libtool=no \
+adnminer-driver-avalon.o: driver-avalon.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-avalon.o -MD -MP -MF $(DEPDIR)/adnminer-driver-avalon.Tpo -c -o adnminer-driver-avalon.o `test -f 'driver-avalon.c' || echo '$(srcdir)/'`driver-avalon.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-avalon.Tpo $(DEPDIR)/adnminer-driver-avalon.Po
+#	$(AM_V_CC)source='driver-avalon.c' object='adnminer-driver-avalon.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-avalon.o `test -f 'driver-avalon.c' || echo '$(srcdir)/'`driver-avalon.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-avalon.o `test -f 'driver-avalon.c' || echo '$(srcdir)/'`driver-avalon.c
 
-vertminer-driver-avalon.obj: driver-avalon.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-avalon.obj -MD -MP -MF $(DEPDIR)/vertminer-driver-avalon.Tpo -c -o vertminer-driver-avalon.obj `if test -f 'driver-avalon.c'; then $(CYGPATH_W) 'driver-avalon.c'; else $(CYGPATH_W) '$(srcdir)/driver-avalon.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-avalon.Tpo $(DEPDIR)/vertminer-driver-avalon.Po
-#	$(AM_V_CC)source='driver-avalon.c' object='vertminer-driver-avalon.obj' libtool=no \
+adnminer-driver-avalon.obj: driver-avalon.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-avalon.obj -MD -MP -MF $(DEPDIR)/adnminer-driver-avalon.Tpo -c -o adnminer-driver-avalon.obj `if test -f 'driver-avalon.c'; then $(CYGPATH_W) 'driver-avalon.c'; else $(CYGPATH_W) '$(srcdir)/driver-avalon.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-avalon.Tpo $(DEPDIR)/adnminer-driver-avalon.Po
+#	$(AM_V_CC)source='driver-avalon.c' object='adnminer-driver-avalon.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-avalon.obj `if test -f 'driver-avalon.c'; then $(CYGPATH_W) 'driver-avalon.c'; else $(CYGPATH_W) '$(srcdir)/driver-avalon.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-avalon.obj `if test -f 'driver-avalon.c'; then $(CYGPATH_W) 'driver-avalon.c'; else $(CYGPATH_W) '$(srcdir)/driver-avalon.c'; fi`
 
-vertminer-driver-knc-spi-fpga.o: driver-knc-spi-fpga.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-knc-spi-fpga.o -MD -MP -MF $(DEPDIR)/vertminer-driver-knc-spi-fpga.Tpo -c -o vertminer-driver-knc-spi-fpga.o `test -f 'driver-knc-spi-fpga.c' || echo '$(srcdir)/'`driver-knc-spi-fpga.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-knc-spi-fpga.Tpo $(DEPDIR)/vertminer-driver-knc-spi-fpga.Po
-#	$(AM_V_CC)source='driver-knc-spi-fpga.c' object='vertminer-driver-knc-spi-fpga.o' libtool=no \
+adnminer-driver-knc-spi-fpga.o: driver-knc-spi-fpga.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-knc-spi-fpga.o -MD -MP -MF $(DEPDIR)/adnminer-driver-knc-spi-fpga.Tpo -c -o adnminer-driver-knc-spi-fpga.o `test -f 'driver-knc-spi-fpga.c' || echo '$(srcdir)/'`driver-knc-spi-fpga.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-knc-spi-fpga.Tpo $(DEPDIR)/adnminer-driver-knc-spi-fpga.Po
+#	$(AM_V_CC)source='driver-knc-spi-fpga.c' object='adnminer-driver-knc-spi-fpga.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-knc-spi-fpga.o `test -f 'driver-knc-spi-fpga.c' || echo '$(srcdir)/'`driver-knc-spi-fpga.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-knc-spi-fpga.o `test -f 'driver-knc-spi-fpga.c' || echo '$(srcdir)/'`driver-knc-spi-fpga.c
 
-vertminer-driver-knc-spi-fpga.obj: driver-knc-spi-fpga.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-knc-spi-fpga.obj -MD -MP -MF $(DEPDIR)/vertminer-driver-knc-spi-fpga.Tpo -c -o vertminer-driver-knc-spi-fpga.obj `if test -f 'driver-knc-spi-fpga.c'; then $(CYGPATH_W) 'driver-knc-spi-fpga.c'; else $(CYGPATH_W) '$(srcdir)/driver-knc-spi-fpga.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-knc-spi-fpga.Tpo $(DEPDIR)/vertminer-driver-knc-spi-fpga.Po
-#	$(AM_V_CC)source='driver-knc-spi-fpga.c' object='vertminer-driver-knc-spi-fpga.obj' libtool=no \
+adnminer-driver-knc-spi-fpga.obj: driver-knc-spi-fpga.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-knc-spi-fpga.obj -MD -MP -MF $(DEPDIR)/adnminer-driver-knc-spi-fpga.Tpo -c -o adnminer-driver-knc-spi-fpga.obj `if test -f 'driver-knc-spi-fpga.c'; then $(CYGPATH_W) 'driver-knc-spi-fpga.c'; else $(CYGPATH_W) '$(srcdir)/driver-knc-spi-fpga.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-knc-spi-fpga.Tpo $(DEPDIR)/adnminer-driver-knc-spi-fpga.Po
+#	$(AM_V_CC)source='driver-knc-spi-fpga.c' object='adnminer-driver-knc-spi-fpga.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-knc-spi-fpga.obj `if test -f 'driver-knc-spi-fpga.c'; then $(CYGPATH_W) 'driver-knc-spi-fpga.c'; else $(CYGPATH_W) '$(srcdir)/driver-knc-spi-fpga.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-knc-spi-fpga.obj `if test -f 'driver-knc-spi-fpga.c'; then $(CYGPATH_W) 'driver-knc-spi-fpga.c'; else $(CYGPATH_W) '$(srcdir)/driver-knc-spi-fpga.c'; fi`
 
-vertminer-driver-bflsc.o: driver-bflsc.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-bflsc.o -MD -MP -MF $(DEPDIR)/vertminer-driver-bflsc.Tpo -c -o vertminer-driver-bflsc.o `test -f 'driver-bflsc.c' || echo '$(srcdir)/'`driver-bflsc.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-bflsc.Tpo $(DEPDIR)/vertminer-driver-bflsc.Po
-#	$(AM_V_CC)source='driver-bflsc.c' object='vertminer-driver-bflsc.o' libtool=no \
+adnminer-driver-bflsc.o: driver-bflsc.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-bflsc.o -MD -MP -MF $(DEPDIR)/adnminer-driver-bflsc.Tpo -c -o adnminer-driver-bflsc.o `test -f 'driver-bflsc.c' || echo '$(srcdir)/'`driver-bflsc.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-bflsc.Tpo $(DEPDIR)/adnminer-driver-bflsc.Po
+#	$(AM_V_CC)source='driver-bflsc.c' object='adnminer-driver-bflsc.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-bflsc.o `test -f 'driver-bflsc.c' || echo '$(srcdir)/'`driver-bflsc.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-bflsc.o `test -f 'driver-bflsc.c' || echo '$(srcdir)/'`driver-bflsc.c
 
-vertminer-driver-bflsc.obj: driver-bflsc.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-bflsc.obj -MD -MP -MF $(DEPDIR)/vertminer-driver-bflsc.Tpo -c -o vertminer-driver-bflsc.obj `if test -f 'driver-bflsc.c'; then $(CYGPATH_W) 'driver-bflsc.c'; else $(CYGPATH_W) '$(srcdir)/driver-bflsc.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-bflsc.Tpo $(DEPDIR)/vertminer-driver-bflsc.Po
-#	$(AM_V_CC)source='driver-bflsc.c' object='vertminer-driver-bflsc.obj' libtool=no \
+adnminer-driver-bflsc.obj: driver-bflsc.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-bflsc.obj -MD -MP -MF $(DEPDIR)/adnminer-driver-bflsc.Tpo -c -o adnminer-driver-bflsc.obj `if test -f 'driver-bflsc.c'; then $(CYGPATH_W) 'driver-bflsc.c'; else $(CYGPATH_W) '$(srcdir)/driver-bflsc.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-bflsc.Tpo $(DEPDIR)/adnminer-driver-bflsc.Po
+#	$(AM_V_CC)source='driver-bflsc.c' object='adnminer-driver-bflsc.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-bflsc.obj `if test -f 'driver-bflsc.c'; then $(CYGPATH_W) 'driver-bflsc.c'; else $(CYGPATH_W) '$(srcdir)/driver-bflsc.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-bflsc.obj `if test -f 'driver-bflsc.c'; then $(CYGPATH_W) 'driver-bflsc.c'; else $(CYGPATH_W) '$(srcdir)/driver-bflsc.c'; fi`
 
-vertminer-driver-bitforce.o: driver-bitforce.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-bitforce.o -MD -MP -MF $(DEPDIR)/vertminer-driver-bitforce.Tpo -c -o vertminer-driver-bitforce.o `test -f 'driver-bitforce.c' || echo '$(srcdir)/'`driver-bitforce.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-bitforce.Tpo $(DEPDIR)/vertminer-driver-bitforce.Po
-#	$(AM_V_CC)source='driver-bitforce.c' object='vertminer-driver-bitforce.o' libtool=no \
+adnminer-driver-bitforce.o: driver-bitforce.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-bitforce.o -MD -MP -MF $(DEPDIR)/adnminer-driver-bitforce.Tpo -c -o adnminer-driver-bitforce.o `test -f 'driver-bitforce.c' || echo '$(srcdir)/'`driver-bitforce.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-bitforce.Tpo $(DEPDIR)/adnminer-driver-bitforce.Po
+#	$(AM_V_CC)source='driver-bitforce.c' object='adnminer-driver-bitforce.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-bitforce.o `test -f 'driver-bitforce.c' || echo '$(srcdir)/'`driver-bitforce.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-bitforce.o `test -f 'driver-bitforce.c' || echo '$(srcdir)/'`driver-bitforce.c
 
-vertminer-driver-bitforce.obj: driver-bitforce.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-bitforce.obj -MD -MP -MF $(DEPDIR)/vertminer-driver-bitforce.Tpo -c -o vertminer-driver-bitforce.obj `if test -f 'driver-bitforce.c'; then $(CYGPATH_W) 'driver-bitforce.c'; else $(CYGPATH_W) '$(srcdir)/driver-bitforce.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-bitforce.Tpo $(DEPDIR)/vertminer-driver-bitforce.Po
-#	$(AM_V_CC)source='driver-bitforce.c' object='vertminer-driver-bitforce.obj' libtool=no \
+adnminer-driver-bitforce.obj: driver-bitforce.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-bitforce.obj -MD -MP -MF $(DEPDIR)/adnminer-driver-bitforce.Tpo -c -o adnminer-driver-bitforce.obj `if test -f 'driver-bitforce.c'; then $(CYGPATH_W) 'driver-bitforce.c'; else $(CYGPATH_W) '$(srcdir)/driver-bitforce.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-bitforce.Tpo $(DEPDIR)/adnminer-driver-bitforce.Po
+#	$(AM_V_CC)source='driver-bitforce.c' object='adnminer-driver-bitforce.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-bitforce.obj `if test -f 'driver-bitforce.c'; then $(CYGPATH_W) 'driver-bitforce.c'; else $(CYGPATH_W) '$(srcdir)/driver-bitforce.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-bitforce.obj `if test -f 'driver-bitforce.c'; then $(CYGPATH_W) 'driver-bitforce.c'; else $(CYGPATH_W) '$(srcdir)/driver-bitforce.c'; fi`
 
-vertminer-driver-hashfast.o: driver-hashfast.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-hashfast.o -MD -MP -MF $(DEPDIR)/vertminer-driver-hashfast.Tpo -c -o vertminer-driver-hashfast.o `test -f 'driver-hashfast.c' || echo '$(srcdir)/'`driver-hashfast.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-hashfast.Tpo $(DEPDIR)/vertminer-driver-hashfast.Po
-#	$(AM_V_CC)source='driver-hashfast.c' object='vertminer-driver-hashfast.o' libtool=no \
+adnminer-driver-hashfast.o: driver-hashfast.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-hashfast.o -MD -MP -MF $(DEPDIR)/adnminer-driver-hashfast.Tpo -c -o adnminer-driver-hashfast.o `test -f 'driver-hashfast.c' || echo '$(srcdir)/'`driver-hashfast.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-hashfast.Tpo $(DEPDIR)/adnminer-driver-hashfast.Po
+#	$(AM_V_CC)source='driver-hashfast.c' object='adnminer-driver-hashfast.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-hashfast.o `test -f 'driver-hashfast.c' || echo '$(srcdir)/'`driver-hashfast.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-hashfast.o `test -f 'driver-hashfast.c' || echo '$(srcdir)/'`driver-hashfast.c
 
-vertminer-driver-hashfast.obj: driver-hashfast.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-hashfast.obj -MD -MP -MF $(DEPDIR)/vertminer-driver-hashfast.Tpo -c -o vertminer-driver-hashfast.obj `if test -f 'driver-hashfast.c'; then $(CYGPATH_W) 'driver-hashfast.c'; else $(CYGPATH_W) '$(srcdir)/driver-hashfast.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-hashfast.Tpo $(DEPDIR)/vertminer-driver-hashfast.Po
-#	$(AM_V_CC)source='driver-hashfast.c' object='vertminer-driver-hashfast.obj' libtool=no \
+adnminer-driver-hashfast.obj: driver-hashfast.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-hashfast.obj -MD -MP -MF $(DEPDIR)/adnminer-driver-hashfast.Tpo -c -o adnminer-driver-hashfast.obj `if test -f 'driver-hashfast.c'; then $(CYGPATH_W) 'driver-hashfast.c'; else $(CYGPATH_W) '$(srcdir)/driver-hashfast.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-hashfast.Tpo $(DEPDIR)/adnminer-driver-hashfast.Po
+#	$(AM_V_CC)source='driver-hashfast.c' object='adnminer-driver-hashfast.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-hashfast.obj `if test -f 'driver-hashfast.c'; then $(CYGPATH_W) 'driver-hashfast.c'; else $(CYGPATH_W) '$(srcdir)/driver-hashfast.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-hashfast.obj `if test -f 'driver-hashfast.c'; then $(CYGPATH_W) 'driver-hashfast.c'; else $(CYGPATH_W) '$(srcdir)/driver-hashfast.c'; fi`
 
-vertminer-driver-bitfury.o: driver-bitfury.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-bitfury.o -MD -MP -MF $(DEPDIR)/vertminer-driver-bitfury.Tpo -c -o vertminer-driver-bitfury.o `test -f 'driver-bitfury.c' || echo '$(srcdir)/'`driver-bitfury.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-bitfury.Tpo $(DEPDIR)/vertminer-driver-bitfury.Po
-#	$(AM_V_CC)source='driver-bitfury.c' object='vertminer-driver-bitfury.o' libtool=no \
+adnminer-driver-bitfury.o: driver-bitfury.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-bitfury.o -MD -MP -MF $(DEPDIR)/adnminer-driver-bitfury.Tpo -c -o adnminer-driver-bitfury.o `test -f 'driver-bitfury.c' || echo '$(srcdir)/'`driver-bitfury.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-bitfury.Tpo $(DEPDIR)/adnminer-driver-bitfury.Po
+#	$(AM_V_CC)source='driver-bitfury.c' object='adnminer-driver-bitfury.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-bitfury.o `test -f 'driver-bitfury.c' || echo '$(srcdir)/'`driver-bitfury.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-bitfury.o `test -f 'driver-bitfury.c' || echo '$(srcdir)/'`driver-bitfury.c
 
-vertminer-driver-bitfury.obj: driver-bitfury.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-bitfury.obj -MD -MP -MF $(DEPDIR)/vertminer-driver-bitfury.Tpo -c -o vertminer-driver-bitfury.obj `if test -f 'driver-bitfury.c'; then $(CYGPATH_W) 'driver-bitfury.c'; else $(CYGPATH_W) '$(srcdir)/driver-bitfury.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-bitfury.Tpo $(DEPDIR)/vertminer-driver-bitfury.Po
-#	$(AM_V_CC)source='driver-bitfury.c' object='vertminer-driver-bitfury.obj' libtool=no \
+adnminer-driver-bitfury.obj: driver-bitfury.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-bitfury.obj -MD -MP -MF $(DEPDIR)/adnminer-driver-bitfury.Tpo -c -o adnminer-driver-bitfury.obj `if test -f 'driver-bitfury.c'; then $(CYGPATH_W) 'driver-bitfury.c'; else $(CYGPATH_W) '$(srcdir)/driver-bitfury.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-bitfury.Tpo $(DEPDIR)/adnminer-driver-bitfury.Po
+#	$(AM_V_CC)source='driver-bitfury.c' object='adnminer-driver-bitfury.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-bitfury.obj `if test -f 'driver-bitfury.c'; then $(CYGPATH_W) 'driver-bitfury.c'; else $(CYGPATH_W) '$(srcdir)/driver-bitfury.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-bitfury.obj `if test -f 'driver-bitfury.c'; then $(CYGPATH_W) 'driver-bitfury.c'; else $(CYGPATH_W) '$(srcdir)/driver-bitfury.c'; fi`
 
-vertminer-driver-icarus.o: driver-icarus.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-icarus.o -MD -MP -MF $(DEPDIR)/vertminer-driver-icarus.Tpo -c -o vertminer-driver-icarus.o `test -f 'driver-icarus.c' || echo '$(srcdir)/'`driver-icarus.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-icarus.Tpo $(DEPDIR)/vertminer-driver-icarus.Po
-#	$(AM_V_CC)source='driver-icarus.c' object='vertminer-driver-icarus.o' libtool=no \
+adnminer-driver-icarus.o: driver-icarus.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-icarus.o -MD -MP -MF $(DEPDIR)/adnminer-driver-icarus.Tpo -c -o adnminer-driver-icarus.o `test -f 'driver-icarus.c' || echo '$(srcdir)/'`driver-icarus.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-icarus.Tpo $(DEPDIR)/adnminer-driver-icarus.Po
+#	$(AM_V_CC)source='driver-icarus.c' object='adnminer-driver-icarus.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-icarus.o `test -f 'driver-icarus.c' || echo '$(srcdir)/'`driver-icarus.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-icarus.o `test -f 'driver-icarus.c' || echo '$(srcdir)/'`driver-icarus.c
 
-vertminer-driver-icarus.obj: driver-icarus.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-icarus.obj -MD -MP -MF $(DEPDIR)/vertminer-driver-icarus.Tpo -c -o vertminer-driver-icarus.obj `if test -f 'driver-icarus.c'; then $(CYGPATH_W) 'driver-icarus.c'; else $(CYGPATH_W) '$(srcdir)/driver-icarus.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-icarus.Tpo $(DEPDIR)/vertminer-driver-icarus.Po
-#	$(AM_V_CC)source='driver-icarus.c' object='vertminer-driver-icarus.obj' libtool=no \
+adnminer-driver-icarus.obj: driver-icarus.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-icarus.obj -MD -MP -MF $(DEPDIR)/adnminer-driver-icarus.Tpo -c -o adnminer-driver-icarus.obj `if test -f 'driver-icarus.c'; then $(CYGPATH_W) 'driver-icarus.c'; else $(CYGPATH_W) '$(srcdir)/driver-icarus.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-icarus.Tpo $(DEPDIR)/adnminer-driver-icarus.Po
+#	$(AM_V_CC)source='driver-icarus.c' object='adnminer-driver-icarus.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-icarus.obj `if test -f 'driver-icarus.c'; then $(CYGPATH_W) 'driver-icarus.c'; else $(CYGPATH_W) '$(srcdir)/driver-icarus.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-icarus.obj `if test -f 'driver-icarus.c'; then $(CYGPATH_W) 'driver-icarus.c'; else $(CYGPATH_W) '$(srcdir)/driver-icarus.c'; fi`
 
-vertminer-driver-klondike.o: driver-klondike.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-klondike.o -MD -MP -MF $(DEPDIR)/vertminer-driver-klondike.Tpo -c -o vertminer-driver-klondike.o `test -f 'driver-klondike.c' || echo '$(srcdir)/'`driver-klondike.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-klondike.Tpo $(DEPDIR)/vertminer-driver-klondike.Po
-#	$(AM_V_CC)source='driver-klondike.c' object='vertminer-driver-klondike.o' libtool=no \
+adnminer-driver-klondike.o: driver-klondike.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-klondike.o -MD -MP -MF $(DEPDIR)/adnminer-driver-klondike.Tpo -c -o adnminer-driver-klondike.o `test -f 'driver-klondike.c' || echo '$(srcdir)/'`driver-klondike.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-klondike.Tpo $(DEPDIR)/adnminer-driver-klondike.Po
+#	$(AM_V_CC)source='driver-klondike.c' object='adnminer-driver-klondike.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-klondike.o `test -f 'driver-klondike.c' || echo '$(srcdir)/'`driver-klondike.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-klondike.o `test -f 'driver-klondike.c' || echo '$(srcdir)/'`driver-klondike.c
 
-vertminer-driver-klondike.obj: driver-klondike.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-klondike.obj -MD -MP -MF $(DEPDIR)/vertminer-driver-klondike.Tpo -c -o vertminer-driver-klondike.obj `if test -f 'driver-klondike.c'; then $(CYGPATH_W) 'driver-klondike.c'; else $(CYGPATH_W) '$(srcdir)/driver-klondike.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-klondike.Tpo $(DEPDIR)/vertminer-driver-klondike.Po
-#	$(AM_V_CC)source='driver-klondike.c' object='vertminer-driver-klondike.obj' libtool=no \
+adnminer-driver-klondike.obj: driver-klondike.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-klondike.obj -MD -MP -MF $(DEPDIR)/adnminer-driver-klondike.Tpo -c -o adnminer-driver-klondike.obj `if test -f 'driver-klondike.c'; then $(CYGPATH_W) 'driver-klondike.c'; else $(CYGPATH_W) '$(srcdir)/driver-klondike.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-klondike.Tpo $(DEPDIR)/adnminer-driver-klondike.Po
+#	$(AM_V_CC)source='driver-klondike.c' object='adnminer-driver-klondike.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-klondike.obj `if test -f 'driver-klondike.c'; then $(CYGPATH_W) 'driver-klondike.c'; else $(CYGPATH_W) '$(srcdir)/driver-klondike.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-klondike.obj `if test -f 'driver-klondike.c'; then $(CYGPATH_W) 'driver-klondike.c'; else $(CYGPATH_W) '$(srcdir)/driver-klondike.c'; fi`
 
-vertminer-driver-modminer.o: driver-modminer.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-modminer.o -MD -MP -MF $(DEPDIR)/vertminer-driver-modminer.Tpo -c -o vertminer-driver-modminer.o `test -f 'driver-modminer.c' || echo '$(srcdir)/'`driver-modminer.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-modminer.Tpo $(DEPDIR)/vertminer-driver-modminer.Po
-#	$(AM_V_CC)source='driver-modminer.c' object='vertminer-driver-modminer.o' libtool=no \
+adnminer-driver-modminer.o: driver-modminer.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-modminer.o -MD -MP -MF $(DEPDIR)/adnminer-driver-modminer.Tpo -c -o adnminer-driver-modminer.o `test -f 'driver-modminer.c' || echo '$(srcdir)/'`driver-modminer.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-modminer.Tpo $(DEPDIR)/adnminer-driver-modminer.Po
+#	$(AM_V_CC)source='driver-modminer.c' object='adnminer-driver-modminer.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-modminer.o `test -f 'driver-modminer.c' || echo '$(srcdir)/'`driver-modminer.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-modminer.o `test -f 'driver-modminer.c' || echo '$(srcdir)/'`driver-modminer.c
 
-vertminer-driver-modminer.obj: driver-modminer.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT vertminer-driver-modminer.obj -MD -MP -MF $(DEPDIR)/vertminer-driver-modminer.Tpo -c -o vertminer-driver-modminer.obj `if test -f 'driver-modminer.c'; then $(CYGPATH_W) 'driver-modminer.c'; else $(CYGPATH_W) '$(srcdir)/driver-modminer.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/vertminer-driver-modminer.Tpo $(DEPDIR)/vertminer-driver-modminer.Po
-#	$(AM_V_CC)source='driver-modminer.c' object='vertminer-driver-modminer.obj' libtool=no \
+adnminer-driver-modminer.obj: driver-modminer.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT adnminer-driver-modminer.obj -MD -MP -MF $(DEPDIR)/adnminer-driver-modminer.Tpo -c -o adnminer-driver-modminer.obj `if test -f 'driver-modminer.c'; then $(CYGPATH_W) 'driver-modminer.c'; else $(CYGPATH_W) '$(srcdir)/driver-modminer.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/adnminer-driver-modminer.Tpo $(DEPDIR)/adnminer-driver-modminer.Po
+#	$(AM_V_CC)source='driver-modminer.c' object='adnminer-driver-modminer.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vertminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o vertminer-driver-modminer.obj `if test -f 'driver-modminer.c'; then $(CYGPATH_W) 'driver-modminer.c'; else $(CYGPATH_W) '$(srcdir)/driver-modminer.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(adnminer_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o adnminer-driver-modminer.obj `if test -f 'driver-modminer.c'; then $(CYGPATH_W) 'driver-modminer.c'; else $(CYGPATH_W) '$(srcdir)/driver-modminer.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

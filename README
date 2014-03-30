@@ -9,7 +9,7 @@ address below.
 Bufius
 VdK1nXpchUjukQyiBSZEcL3ipFyGQj15Ko
 
-Main author of cgminer (vertminer is based on cgminer)
+Main author of cgminer (adnminer is based on cgminer)
 Con Kolivas <kernel@kolivas.org>
 15qSxP1SQcUX3o4nhkfdbgyoWEFMomJ4rZ
 
@@ -18,7 +18,7 @@ DOWNLOADS:
 
 GIT TREE:
 
-https://github.com/Bufius/vertminer-gpu
+https://github.com/Bufius/adnminer-gpu
 
 Support thread:
 
@@ -35,7 +35,7 @@ MORE INFORMATION ON EACH.
 
 EXECUTIVE SUMMARY ON USAGE:
 
-After saving configuration from the menu, you do not need to give vertminer any
+After saving configuration from the menu, you do not need to give adnminer any
 arguments and it will load your configuration.
 
 Any configuration file may also contain a single
@@ -46,23 +46,23 @@ Writing the configuration will save all settings from all files in the output.
 
 Single pool:
 
-vertminer -o http://pool:port -u username -p password
+adnminer -o http://pool:port -u username -p password
 
 Multiple pools:
 
-vertminer -o http://pool1:port -u pool1username -p pool1password -o http://pool2:port -u pool2usernmae -p pool2password
+adnminer -o http://pool1:port -u pool1username -p pool1password -o http://pool2:port -u pool2usernmae -p pool2password
 
 Single pool with a standard http proxy, regular desktop:
 
-vertminer -o "http:proxy:port|http://pool:port" -u username -p password
+adnminer -o "http:proxy:port|http://pool:port" -u username -p password
 
 Single pool with a socks5 proxy, regular desktop:
 
-vertminer -o "socks5:proxy:port|http://pool:port" -u username -p password
+adnminer -o "socks5:proxy:port|http://pool:port" -u username -p password
 
 Single pool with stratum protocol support:
 
-vertminer -o stratum+tcp://pool:port -u username -p password
+adnminer -o stratum+tcp://pool:port -u username -p password
 
 The list of proxy types are:
  http:    standard http 1.1 proxy
@@ -72,10 +72,10 @@ The list of proxy types are:
  socks4a: socks4a proxy
  socks5h: socks5 proxy using a hostname
 
-If you compile vertminer with a version of CURL before 7.19.4 then some of the above will
+If you compile adnminer with a version of CURL before 7.19.4 then some of the above will
 not be available. All are available since CURL version 7.19.4
 
-If you specify the --socks-proxy option to vertminer, it will only be applied to all pools
+If you specify the --socks-proxy option to adnminer, it will only be applied to all pools
 that don't specify their own proxy setting like above
 
 ---
@@ -131,22 +131,22 @@ Basic *nix build instructions:
 	./autogen.sh	# only needed if building from git repo
 	CFLAGS="-O2 -Wall -march=native" ./configure <options>
 
-	No installation is necessary. You may run vertminer from the build
+	No installation is necessary. You may run adnminer from the build
 	directory directly, but you may do make install if you wish to install
-	vertminer to a system location or location you specified.
+	adnminer to a system location or location you specified.
 
 Native WIN32 build instructions: see windows-build.txt
 
 ---
 
-Usage instructions:  Run "vertminer --help" to see options:
+Usage instructions:  Run "adnminer --help" to see options:
 
 Usage: . [-atDdGCgIKklmpPQqrRsTouvwOchnV] 
 Options for both config file and command line:
 --api-allow         Allow API access (if enabled) only to the given list of [W:]IP[/Prefix] address[/subnets]
                     This overrides --api-network and you must specify 127.0.0.1 if it is required
                     W: in front of the IP address gives that address privileged access to all api commands
---api-description   Description placed in the API status header (default: vertminer version)
+--api-description   Description placed in the API status header (default: adnminer version)
 --api-groups        API one letter groups G:cmd:cmd[,P:cmd:*...]
                     See API-README for usage
 --api-listen        Listen for API requests (default: disabled)
@@ -162,7 +162,7 @@ Options for both config file and command line:
 --auto-fan          Automatically adjust all GPU fan speeds to maintain a target temperature
 --auto-gpu          Automatically adjust all GPU engine clock speeds to maintain a target temperature
 --balance           Change multipool strategy from failover to even share balance
---benchmark         Run vertminer in benchmark mode - produces no shares
+--benchmark         Run adnminer in benchmark mode - produces no shares
 --compact           Use compact display without per device statistics
 --debug|-D          Enable debug output
 --device|-d <arg>   Select device to use, one value, range and/or comma separated (e.g. 0-2,4) default: all
@@ -190,7 +190,7 @@ Options for both config file and command line:
 --scan-time|-s <arg> Upper bound on time spent scanning current work, in seconds (default: 60)
 --sched-start <arg> Set a time of day in HH:MM to start mining (a once off without a stop time)
 --sched-stop <arg>  Set a time of day in HH:MM to stop mining (will quit without a start time)
---scrypt-vert       Use the scrypt algorithm for mining (vertcoin only)
+--scrypt-o       Use the scrypt algorithm for mining (aiden only)
 --sharelog <arg>    Append share log to file
 --shares <arg>      Quit after mining N shares (default: unlimited)
 --socks-proxy <arg> Set socks4 proxy (host:port) for all pools without a proxy specified
@@ -274,7 +274,7 @@ SCRYPT only options:
 
 --lookup-gap <arg>  Set GPU lookup gap for scrypt mining, comma separated
 --shaders <arg>     GPU shaders per card for tuning scrypt, comma separated
---thread-concurrency <arg> Set GPU thread concurrency for scrypt-vert mining, comma separated
+--thread-concurrency <arg> Set GPU thread concurrency for scrypt-o mining, comma separated
 
 See SCRYPT-README for more information regarding litecoin mining.
 
@@ -296,7 +296,7 @@ drivers for you and then once you plug in your device you can choose the
 "list all devices" from the "option" menu and you should be able to see the
 device as something like: "BitFORCE SHA256 SC". Choose the install or replace
 driver option and select WinUSB. You can either google for zadig or download
-it from the vertminer directoy in the DOWNLOADS link above.
+it from the adnminer directoy in the DOWNLOADS link above.
 
 LINUX:
 
@@ -314,10 +314,10 @@ If your distribution does not have the plugdev group you can create it with:
 
 In order for the BFL devices to instantly be owned by the plugdev group and
 accessible by anyone from the plugdev group you can copy the file
-"01-vertminer.rules" from the vertminer archive into the /etc/udev/rules.d
+"01-adnminer.rules" from the adnminer archive into the /etc/udev/rules.d
 directory with the following command:
 
- sudo cp 01-vertminer.rules /etc/udev/rules.d/
+ sudo cp 01-adnminer.rules /etc/udev/rules.d/
 
 After this you can either manually restart udev and re-login, or more easily
 just reboot.
@@ -357,7 +357,7 @@ If you wish to see all USB devices, include the --usb-list-all option
 The second version
   --usb BAS:1,BFL:1,MMQ:0,ICA:0,KLN:0
 allows you to specify how many devices to choose based on each device
-driver vertminer has - there are currently 5 USB drivers: BAS, BFL, MMQ.
+driver adnminer has - there are currently 5 USB drivers: BAS, BFL, MMQ.
 ICA & KLN
 N.B. you can only specify which device driver to limit, not the type of
 each device, e.g. with BAS:n you can limit how many BFL ASIC devices will
@@ -368,7 +368,7 @@ not the number of MMQ FPGAs
 The third version
   --usb :10
 means only use a maximum of 10 devices of any supported USB devices
-Once vertminer has 10 devices it will not configure any more and hotplug will
+Once adnminer has 10 devices it will not configure any more and hotplug will
 not scan for any more
 If one of the 10 devices stops working, hotplug - if enabled, as is default
 - will scan normally again until it has 10 devices
@@ -478,7 +478,7 @@ The total difficulty of rejected shares
 The number of hardware erorrs
 The work utility defined as the number of diff1 shares work / minute
 
-The vertminer status line shows:
+The adnminer status line shows:
  ST: 1  SS: 0  NB: 1  LW: 8  GF: 1  RF: 1
 
 ST is STaged work items (ready to use).
@@ -492,7 +492,7 @@ The block display shows:
 Block: 0074c5e482e34a506d2a051a...  Started: [17:17:22]  Best share: 2.71K
 
 This shows a short stretch of the current block, when the new block started,
-and the all time best difficulty share you've found since starting vertminer
+and the all time best difficulty share you've found since starting adnminer
 this time.
 
 
@@ -581,15 +581,15 @@ quotas in a configuration file they would be specified thus:
 ---
 LOGGING
 
-vertminer will log to stderr if it detects stderr is being redirected to a file.
+adnminer will log to stderr if it detects stderr is being redirected to a file.
 To enable logging simply add 2>logfile.txt to your command line and logfile.txt
 will contain the logged output at the log level you specify (normal, verbose,
 debug etc.)
 
 In other words if you would normally use:
-./vertminer -o xxx -u yyy -p zzz
+./adnminer -o xxx -u yyy -p zzz
 if you use
-./vertminer -o xxx -u yyy -p zzz 2>logfile.txt
+./adnminer -o xxx -u yyy -p zzz 2>logfile.txt
 it will log to a file called logfile.txt and otherwise work the same.
 
 There is also the -m option on linux which will spawn a command of your choice
@@ -616,14 +616,14 @@ usually 0.000 unless there was a problem with submitting the work,
 S:n.nnn is how long it took to submit the completed work and await the reply,
 R:hh:mm:ss is the actual time the work submit reply was received
 
-If you start vertminer with the --sharelog option, you can get detailed
+If you start adnminer with the --sharelog option, you can get detailed
 information for each share found. The argument to the option may be "-" for
 standard output (not advisable with the ncurses UI), any valid positive number
 for that file descriptor, or a filename.
 
 To log share data to a file named "share.log", you can use either:
-./vertminer --sharelog 50 -o xxx -u yyy -p zzz 50>share.log
-./vertminer --sharelog share.log -o xxx -u yyy -p zzz
+./adnminer --sharelog 50 -o xxx -u yyy -p zzz 50>share.log
+./adnminer --sharelog share.log -o xxx -u yyy -p zzz
 
 For every share found, data will be logged in a CSV (Comma Separated Value)
 format:
@@ -650,11 +650,11 @@ FAQ
 
 Q: Can I mine on servers from different networks (eg smartcoin and bitcoin) at
 the same time?
-A: No, vertminer keeps a database of the block it's working on to ensure it does
+A: No, adnminer keeps a database of the block it's working on to ensure it does
 not work on stale blocks, and having different blocks from two networks would
 make it invalidate the work from each other.
 
-Q: Can I configure vertminer to mine with different login credentials or pools
+Q: Can I configure adnminer to mine with different login credentials or pools
 for each separate device?
 A: No.
 
@@ -681,10 +681,10 @@ option --failover-only.
 
 Q: Is this a virus?
 A: Cgminer is being packaged with other trojan scripts and some antivirus
-software is falsely accusing vertminer.exe as being the actual virus, rather
-than whatever it is being packaged with. If you installed vertminer yourself,
+software is falsely accusing adnminer.exe as being the actual virus, rather
+than whatever it is being packaged with. If you installed adnminer yourself,
 then you do not have a virus on your computer. Complain to your antivirus
-software company. They seem to be flagging even source code now from vertminer
+software company. They seem to be flagging even source code now from adnminer
 as viruses, even though text source files can't do anything by themself.
 
 Q: Can you modify the display to include more of one thing in the output and
@@ -703,10 +703,10 @@ Q: What happened to CPU mining?
 A: Being increasingly irrelevant for most users, and a maintenance issue, it is
 no longer under active development and will not be supported. No binary builds
 supporting CPU mining will be released. Virtually all remaining users of CPU
-mining are as back ends for illegal botnets. The main reason vertminer is being
+mining are as back ends for illegal botnets. The main reason adnminer is being
 inappopriately tagged as a virus by antivirus software is due to the trojans
 packaging a CPU mining capable version of it. There is no longer ANY CPU mining
-code in vertminer. If you are mining bitcoin with CPU today, you are spending
+code in adnminer. If you are mining bitcoin with CPU today, you are spending
 1000x more in electricity costs than you are earning in bitcoin.
 
 Q: GUI version?
@@ -714,7 +714,7 @@ A: No. The RPC interface makes it possible for someone else to write one
 though.
 
 Q: I'm having an issue. What debugging information should I provide?
-A: Start vertminer with your regular commands and add -D -T --verbose and provide
+A: Start adnminer with your regular commands and add -D -T --verbose and provide
 the full startup output and a summary of your hardware, operating system, ATI
 driver version and ATI stream version.
 
@@ -726,19 +726,19 @@ Q: Is it faster to mine on windows or linux?
 A: It makes no difference. It comes down to choice of operating system for
 their various features. Linux offers much better long term stability and
 remote monitoring and security, while windows offers you overclocking tools
-that can achieve much more than vertminer can do on linux.
+that can achieve much more than adnminer can do on linux.
 
-Q: Can I mine with vertminer on a MAC?
-A: vertminer will compile on OSX, but the performance of GPU mining is
+Q: Can I mine with adnminer on a MAC?
+A: adnminer will compile on OSX, but the performance of GPU mining is
 compromised due to the opencl implementation on OSX, there is no temperature
 or fanspeed monitoring, and the cooling design of most MACs, despite having
 powerful GPUs, will usually not cope with constant usage leading to a high
 risk of thermal damage. It is highly recommended not to mine on a MAC unless
 it is to a USB device.
 
-Q: I'm trying to mine litecoin but vertminer shows MH values instead of kH and
+Q: I'm trying to mine litecoin but adnminer shows MH values instead of kH and
 submits no shares?
-A: Add the --scrypt-vert parameter.
+A: Add the --scrypt-o parameter.
 
 Q: I switch users on windows and my mining stops working?
 A: That's correct, it does. It's a permissions issue that there is no known
@@ -755,7 +755,7 @@ with -g 1. It is also recommended to use --failover-only since the work is
 effectively like a different block chain. If mining with a minirig, it is worth
 adding the --bfl-range option.
 
-Q: Are OpenCL kernels from other mining software useable in vertminer?
+Q: Are OpenCL kernels from other mining software useable in adnminer?
 A: No, the APIs are slightly different between the different software and they
 will not work.
 
@@ -765,7 +765,7 @@ working in the logs?
 A: http://us.php.net/manual/en/sockets.installation.php
 
 Q: What is a PGA?
-A: At the moment, vertminer supports 3 FPGAs: BitForce, Icarus and ModMiner.
+A: At the moment, adnminer supports 3 FPGAs: BitForce, Icarus and ModMiner.
 They are Field-Programmable Gate Arrays that have been programmed to do Bitcoin
 mining. Since the acronym needs to be only 3 characters, the "Field-" part has
 been skipped.
@@ -781,14 +781,14 @@ A: No.
 Q: What is stratum and how do I use it?
 A: Stratum is a protocol designed for pooled mining in such a way as to
 minimise the amount of network communications, yet scale to hardware of any
-speed. With versions of vertminer 2.8.0+, if a pool has stratum support, vertminer
+speed. With versions of adnminer 2.8.0+, if a pool has stratum support, adnminer
 will automatically detect it and switch to the support as advertised if it can.
 If you input the stratum port directly into your configuration, or use the
-special prefix "stratum+tcp://" instead of "http://", vertminer will ONLY try to
+special prefix "stratum+tcp://" instead of "http://", adnminer will ONLY try to
 use stratum protocol mining. The advantages of stratum to the miner are no
 delays in getting more work for the miner, less rejects across block changes,
 and far less network communications for the same amount of mining hashrate. If
-you do NOT wish vertminer to automatically switch to stratum protocol even if it
+you do NOT wish adnminer to automatically switch to stratum protocol even if it
 is detected, add the --fix-protocol option.
 
 Q: Why don't the statistics add up: Accepted, Rejected, Stale, Hardware Errors,
@@ -804,7 +804,7 @@ Q: Why do the scrypt diffs not match with the current difficulty target?
 A: The current scrypt block difficulty is expressed in terms of how many
 multiples of the BTC difficulty it currently is (eg 28) whereas the shares of
 "difficulty 1" are actually 65536 times smaller than the BTC ones. The diff
-expressed by vertminer is as multiples of difficulty 1 shares.
+expressed by adnminer is as multiples of difficulty 1 shares.
 
 Q: Can I make a donation in litecoin?
 A: Yes, see SCRYPT-README for the address, but the author prefers bitcoin if
@@ -813,7 +813,7 @@ possible.
 Q: My keyboard input momentarily pauses or repeats keys every so often on
 windows while mining?
 A: The USB implementation on windows can be very flaky on some hardware and
-every time vertminer looks for new hardware to hotplug it it can cause these
+every time adnminer looks for new hardware to hotplug it it can cause these
 sorts of problems. You can disable hotplug with:
 --hotplug 0
 

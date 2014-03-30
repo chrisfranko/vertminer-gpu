@@ -20,88 +20,88 @@ SUBDIRS		= lib compat ccan
 
 INCLUDES	= $(PTHREAD_FLAGS) -fno-strict-aliasing $(JANSSON_INCLUDES) $(USBUTILS_INCLUDES)
 
-bin_PROGRAMS	= vertminer
+bin_PROGRAMS	= adnminer
 
-vertminer_LDFLAGS	= $(PTHREAD_FLAGS)
-vertminer_LDADD	= $(DLOPEN_FLAGS) @LIBCURL_LIBS@ @JANSSON_LIBS@ @PTHREAD_LIBS@ \
+adnminer_LDFLAGS	= $(PTHREAD_FLAGS)
+adnminer_LDADD	= $(DLOPEN_FLAGS) @LIBCURL_LIBS@ @JANSSON_LIBS@ @PTHREAD_LIBS@ \
 		  @OPENCL_LIBS@ @NCURSES_LIBS@ @PDCURSES_LIBS@ @WS2_LIBS@ \
 		  @LIBUSB_LIBS@ @MM_LIBS@ @RT_LIBS@ \
 		  @MATH_LIBS@ lib/libgnu.a ccan/libccan.a
 
 if HAVE_WINDOWS
-vertminer_CPPFLAGS = -I$(top_builddir)/lib -I$(top_srcdir)/lib @OPENCL_FLAGS@
+adnminer_CPPFLAGS = -I$(top_builddir)/lib -I$(top_srcdir)/lib @OPENCL_FLAGS@
 else
-vertminer_CPPFLAGS = -I$(top_builddir)/lib -I$(top_srcdir)/lib @OPENCL_FLAGS@ @LIBCURL_CFLAGS@
+adnminer_CPPFLAGS = -I$(top_builddir)/lib -I$(top_srcdir)/lib @OPENCL_FLAGS@ @LIBCURL_CFLAGS@
 endif
 
-vertminer_CPPFLAGS += $(ADL_CPPFLAGS)
+adnminer_CPPFLAGS += $(ADL_CPPFLAGS)
 
 # common sources
-vertminer_SOURCES := vertminer.c
+adnminer_SOURCES := adnminer.c
 
-vertminer_SOURCES	+= elist.h miner.h compat.h bench_block.h	\
+adnminer_SOURCES	+= elist.h miner.h compat.h bench_block.h	\
 		   util.c util.h uthash.h logging.h		\
 		   sha2.c sha2.h api.c
 
-vertminer_SOURCES	+= logging.c
+adnminer_SOURCES	+= logging.c
 
 if HAS_OPENCL
 bin_SCRIPTS	= $(top_srcdir)/*.cl
 
-vertminer_SOURCES += driver-opencl.h driver-opencl.c
-vertminer_SOURCES += ocl.c ocl.h findnonce.c findnonce.h
-vertminer_SOURCES += adl.c adl.h adl_functions.h
-vertminer_SOURCES += *.cl
+adnminer_SOURCES += driver-opencl.h driver-opencl.c
+adnminer_SOURCES += ocl.c ocl.h findnonce.c findnonce.h
+adnminer_SOURCES += adl.c adl.h adl_functions.h
+adnminer_SOURCES += *.cl
 
 if HAS_SCRYPT
-vertminer_SOURCES += scrypt.c scrypt.h
+adnminer_SOURCES += scrypt.c scrypt.h
 endif
 
 endif
 
 if NEED_FPGAUTILS
-vertminer_SOURCES += fpgautils.c fpgautils.h
+adnminer_SOURCES += fpgautils.c fpgautils.h
 endif
 
 if WANT_USBUTILS
-vertminer_SOURCES += usbutils.c usbutils.h
+adnminer_SOURCES += usbutils.c usbutils.h
 endif
 
 # Device drivers
 if HAS_AVALON
-vertminer_SOURCES += driver-avalon.c driver-avalon.h
+adnminer_SOURCES += driver-avalon.c driver-avalon.h
 endif
 
 if HAS_KNC
-vertminer_SOURCES += driver-knc-spi-fpga.c
+adnminer_SOURCES += driver-knc-spi-fpga.c
 endif
 
 if HAS_BFLSC
-vertminer_SOURCES += driver-bflsc.c driver-bflsc.h
+adnminer_SOURCES += driver-bflsc.c driver-bflsc.h
 endif
 
 if HAS_BITFORCE
-vertminer_SOURCES += driver-bitforce.c
+adnminer_SOURCES += driver-bitforce.c
 endif
 
 if HAS_HASHFAST
-vertminer_SOURCES += driver-hashfast.c driver-hashfast.h hf_protocol.h
+adnminer_SOURCES += driver-hashfast.c driver-hashfast.h hf_protocol.h
 endif
 
 if HAS_BITFURY
-vertminer_SOURCES += driver-bitfury.c driver-bitfury.h
+adnminer_SOURCES += driver-bitfury.c driver-bitfury.h
 endif
 
 if HAS_ICARUS
-vertminer_SOURCES += driver-icarus.c
+adnminer_SOURCES += driver-icarus.c
 endif
 
 if HAS_KLONDIKE
-vertminer_SOURCES += driver-klondike.c
+adnminer_SOURCES += driver-klondike.c
 endif
 
 if HAS_MODMINER
-vertminer_SOURCES += driver-modminer.c
+adnminer_SOURCES += driver-modminer.c
 bitstreamsdir = $(bindir)/bitstreams
 dist_bitstreams_DATA = $(top_srcdir)/bitstreams/*
 endif

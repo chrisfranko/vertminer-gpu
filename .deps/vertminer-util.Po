@@ -1,4 +1,4 @@
-vertminer-util.o: util.c config.h /usr/include/stdio.h \
+adnminer-util.o: util.c config.h /usr/include/stdio.h \
  /usr/include/features.h /usr/include/stdc-predef.h \
  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \

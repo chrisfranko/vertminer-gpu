@@ -1,4 +1,4 @@
-vertminer-sha2.o: sha2.c lib/string.h /usr/include/string.h \
+adnminer-sha2.o: sha2.c lib/string.h /usr/include/string.h \
  /usr/include/features.h /usr/include/stdc-predef.h \
  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \

@@ -1,4 +1,4 @@
-vertminer-driver-opencl.o: driver-opencl.c config.h /usr/include/curses.h \
+adnminer-driver-opencl.o: driver-opencl.c config.h /usr/include/curses.h \
  /usr/include/ncurses_dll.h /usr/include/stdio.h /usr/include/features.h \
  /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \

@@ -302,19 +302,19 @@
 /* #undef NO_MINUS_C_MINUS_O */
 
 /* Name of package */
-#define PACKAGE "vertminer"
+#define PACKAGE "adnminer"
 
 /* Define to the address where bug reports for this package should be sent. */
 #define PACKAGE_BUGREPORT ""
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "vertminer"
+#define PACKAGE_NAME "adnminer"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "vertminer 3.7.2"
+#define PACKAGE_STRING "adnminer 3.7.2"
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME "vertminer"
+#define PACKAGE_TARNAME "adnminer"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL ""

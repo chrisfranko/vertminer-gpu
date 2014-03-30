@@ -492,7 +492,7 @@ _clState *initCl(unsigned int gpu, char *name, size_t nameSize)
 			cgpu->lookup_gap = cgpu->opt_lg;
 
 		unsigned int sixtyfours;
-		sixtyfours =  ((cgpu->max_alloc*cgpu->lookup_gap) / (2048*128) / 64 - 1);
+		sixtyfours =  ((cgpu->max_alloc*cgpu->lookup_gap) / (256*128) / 64 - 1);
 		applog(LOG_INFO,"----------> cgpu->max_alloc: %lu",cgpu->max_alloc);
 		applog(LOG_INFO,"----------> sixtyfours: %d",sixtyfours);
 		applog(LOG_INFO,"----------> cgpu->shaders: %zu",cgpu->shaders);

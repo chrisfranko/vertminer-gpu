@@ -59,10 +59,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/vertminer
-pkgincludedir = $(includedir)/vertminer
-pkglibdir = $(libdir)/vertminer
-pkglibexecdir = $(libexecdir)/vertminer
+pkgdatadir = $(datadir)/adnminer
+pkgincludedir = $(includedir)/adnminer
+pkglibdir = $(libdir)/adnminer
+pkglibexecdir = $(libexecdir)/adnminer
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -340,11 +340,11 @@ OPENCL_FLAGS =
 OPENCL_LIBS = -lOpenCL
 OTOOL = 
 OTOOL64 = 
-PACKAGE = vertminer
+PACKAGE = adnminer
 PACKAGE_BUGREPORT = 
-PACKAGE_NAME = vertminer
-PACKAGE_STRING = vertminer 3.7.2
-PACKAGE_TARNAME = vertminer
+PACKAGE_NAME = adnminer
+PACKAGE_STRING = adnminer 3.7.2
+PACKAGE_TARNAME = adnminer
 PACKAGE_URL = 
 PACKAGE_VERSION = 3.7.2
 PATH_SEPARATOR = :

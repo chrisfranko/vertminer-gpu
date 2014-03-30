@@ -314,7 +314,7 @@ static struct stratum_share *stratum_shares = NULL;
 
 char *opt_socks_proxy = NULL;
 
-static const char def_conf[] = "vertminer.conf";
+static const char def_conf[] = "adnminer.conf";
 static char *default_config;
 static bool config_loaded;
 static int include_count;
@@ -1376,9 +1376,9 @@ static struct opt_table opt_config_table[] = {
 		     set_schedtime, NULL, &schedstop,
 		     "Set a time of day in HH:MM to stop mining (will quit without a start time)"),
 #ifdef USE_SCRYPT
-	OPT_WITHOUT_ARG("--scrypt-vert",
+	OPT_WITHOUT_ARG("--scrypt-o",
 			opt_set_bool, &opt_scrypt,
-			"Use the scrypt-vert algorithm for mining (vertcoin only)"),
+			"Use the scrypt-o algorithm for mining (vertcoin only)"),
 	OPT_WITH_ARG("--shaders",
 		     set_shaders, NULL, NULL,
 		     "GPU shaders per card for tuning scrypt, comma separated"),
@@ -1424,7 +1424,7 @@ static struct opt_table opt_config_table[] = {
 #ifdef USE_SCRYPT
 	OPT_WITH_ARG("--thread-concurrency",
 		     set_thread_concurrency, NULL, NULL,
-		     "Set GPU thread concurrency for scrypt-vert mining, comma separated"),
+		     "Set GPU thread concurrency for scrypt-o mining, comma separated"),
 #endif
 	OPT_WITH_ARG("--url|-o",
 		     set_url, NULL, NULL,

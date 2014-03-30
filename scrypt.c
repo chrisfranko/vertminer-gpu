@@ -370,7 +370,7 @@ static void scrypt_1024_1_1_256_sp(const uint32_t* input, char* scratchpad, uint
 
 	PBKDF2_SHA256_80_128(input, X);
 
-	for (i = 0; i < 2048; i += 2) {
+	for (i = 0; i < 256; i += 2) {
 		memcpy(&V[i * 32], X, 128);
 
 		salsa20_8(&X[0], &X[16]);
@@ -381,8 +381,8 @@ static void scrypt_1024_1_1_256_sp(const uint32_t* input, char* scratchpad, uint
 		salsa20_8(&X[0], &X[16]);
 		salsa20_8(&X[16], &X[0]);
 	}
-	for (i = 0; i < 2048; i += 2) {
-		j = X[16] & 2047;
+	for (i = 0; i < 256; i += 2) {
+		j = X[16] & 255;
 		p2 = (uint64_t *)(&V[j * 32]);
 		for(k = 0; k < 16; k++)
 			p1[k] ^= p2[k];
@@ -403,8 +403,8 @@ static void scrypt_1024_1_1_256_sp(const uint32_t* input, char* scratchpad, uint
 }
 
 /* 131583 rounded up to 4 byte alignment */
-//#define SCRATCHBUF_SIZE (131584)
-#define SCRATCHBUF_SIZE (262207)
+#define SCRATCHBUF_SIZE (131584)
+//#define SCRATCHBUF_SIZE (262207)
 
 void scrypt_regenhash(struct work *work)
 {

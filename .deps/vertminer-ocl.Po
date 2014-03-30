@@ -1,4 +1,4 @@
-vertminer-ocl.o: ocl.c config.h lib/signal.h config.h \
+adnminer-ocl.o: ocl.c config.h lib/signal.h config.h \
  /usr/include/signal.h /usr/include/features.h /usr/include/stdc-predef.h \
  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
